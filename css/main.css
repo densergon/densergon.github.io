@@ -1,36 +1,42 @@
-#slider a{
-    color:black;
+#slider a {
+  color: black;
 }
 
-#aboutme-card img{
-    max-height: 20rem;
-    max-width: 20rem;
+#aboutme-card img {
+  max-height: 20rem;
+  max-width: 20rem;
 }
-#test1{
-    height:100vh;
-    background-color: gray;
-    padding-top: 0.5rem
+#test1 {
+  height: 100vh;
+  background-color: gray;
+  padding-top: 0.5rem;
 }
-#test1 p{
-    color:white;
+#test1 p {
+  color: white;
 }
-#test1 img{
-    max-height:20rem;
-    display:block;
-    margin:auto;
+#test1 img {
+  max-height: 20rem;
+  display: block;
+  margin: auto;
 }
-#test2{
-    height:100vh;
-    background-color:whitesmoke;
-    padding-top: 0.5rem
+#test2 {
+  height: 100vh;
+  background-color: whitesmoke;
+  padding-top: 0.5rem;
 }
-#test3{
-    height:100vh;
-    background-color:gray;
-    padding-top: 0.5rem
+#test3 {
+  height: 100vh;
+  background-color: gray;
+  padding-top: 0.5rem;
 }
-#test4{
-    height:100vh;
-    background-color:whitesmoke;
-    padding-top: 0.5rem
+#test4 {
+  height: 100vh;
+  background-color: whitesmoke;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+#test4 a{
+    margin-top:10rem;
+    margin-left: auto;
+  margin-right: auto;
 }
