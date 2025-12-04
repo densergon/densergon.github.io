@@ -1,0 +1,13 @@
+{
+    "navbar": {},
+    "hero": {
+        "greeting": "Hola, soy",
+        "name": "Daniel Serna",
+        "title": "Ingeniero de Sistemas Computacionales",
+        "description": "Soy un entusiasta de la tecnología y la innovación, con un fuerte enfoque en la resolución de problemas creativos a través de la tecnología de vanguardia.",
+        "buttons": {
+            "viewWork": "Ver mi trabajo",
+            "getInTouch": "Contáctame"
+        }
+    }
+}

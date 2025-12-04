@@ -1,0 +1,13 @@
+{
+    "navbar": {},
+    "hero": {
+        "greeting": "Hello, I'm",
+        "name": "Daniel Serna",
+        "title": "Computing Systems Engineer",
+        "description": "Passionate about building innovative solutions and transforming ideas into reality through cutting-edge technology and creative problem-solving.",
+        "buttons": {
+            "view-work": "View My Work",
+            "get-in-touch": "Get In Touch"
+        }
+    }
+}

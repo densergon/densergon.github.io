@@ -12,7 +12,6 @@ import Contact from './sections/contact'
 import Footer from './sections/footer'
 
 function App() {
-  const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
@@ -27,7 +26,6 @@ function App() {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
-      setActiveSection(sectionId)
     }
   }
 
