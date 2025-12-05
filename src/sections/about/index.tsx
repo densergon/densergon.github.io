@@ -1,37 +1,25 @@
+import { useTranslation } from "react-i18next";
 function About() {
+    const { t } = useTranslation("about");
     return (
         <section id="about" className="about">
             <div className="section-header">
-                <h2>Who Am I</h2>
+                <h2>{t('title')}</h2>
                 <div className="section-divider"></div>
             </div>
             <div className="about-content">
                 <div className="about-text">
                     <p>
-                        I'm a Computing Systems Engineer with a passion for creating elegant solutions to complex problems.
-                        My journey in technology has been driven by curiosity and a constant desire to learn and innovate.
-                    </p>
-                    <p>
-                        With expertise spanning software development, system architecture, and emerging technologies,
-                        I thrive on challenges that push the boundaries of what's possible. I believe in writing clean,
-                        maintainable code and building systems that scale.
-                    </p>
-                    <p>
-                        When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
-                        or sharing knowledge with the developer community.
+                        {t('content')}
                     </p>
                     <div className="about-stats">
                         <div className="stat-item">
                             <h3 className="gradient-text">5+</h3>
-                            <p>Years Experience</p>
+                            <p>{t('experience')}</p>
                         </div>
                         <div className="stat-item">
-                            <h3 className="gradient-text">50+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div className="stat-item">
-                            <h3 className="gradient-text">100%</h3>
-                            <p>Client Satisfaction</p>
+                            <h3 className="gradient-text">30+</h3>
+                            <p>{t('projects')}</p>
                         </div>
                     </div>
                 </div>

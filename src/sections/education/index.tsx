@@ -1,19 +1,21 @@
+import { useTranslation } from "react-i18next";
 function Education() {
+    const { t } = useTranslation("education");
     return (
         <section id="education" className="education">
             <div className="section-header">
-                <h2>Education</h2>
+                <h2>{t("title")}</h2>
                 <div className="section-divider"></div>
             </div>
             <div className="education-grid">
                 <div className="education-card card">
                     <div className="education-icon">🎓</div>
-                    <h3>Bachelor of Science in Computing Systems Engineering</h3>
-                    <h4>University of Technology</h4>
-                    <p className="education-date">2014 - 2018</p>
+                    <h3>{t("title")}</h3>
+                    <h4>{t("university")}</h4>
+                    <h5>{t("school")}</h5>
+                    <p className="education-date">{t("year")}</p>
                     <p>
-                        Graduated with honors. Specialized in software engineering, distributed systems,
-                        and artificial intelligence. Completed capstone project on machine learning applications.
+                        Specialized in multiplatform applications, web development.
                     </p>
                 </div>
 

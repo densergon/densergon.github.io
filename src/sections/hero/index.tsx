@@ -1,23 +1,25 @@
 import Hero3DViewer from './Hero3DViewer'
+import { useTranslation } from 'react-i18next';
 
 function Hero({ scrollToSection }: { scrollToSection: (section: string) => void }) {
+    const { t } = useTranslation("hero");
+
     return (
         <section id="home" className="hero">
             <div className="hero-content">
                 <div className="hero-text">
-                    <p className="hero-greeting">Hello, I'm</p>
-                    <h1 className="hero-name">Daniel Serna</h1>
-                    <h2 className="hero-title">Computing Systems Engineer</h2>
+                    <p className="hero-greeting">{t("greeting")}</p>
+                    <h1 className="hero-name">{t("name")}</h1>
+                    <h2 className="hero-title">{t("title")}</h2>
                     <p className="hero-description">
-                        Passionate about building innovative solutions and transforming ideas into reality
-                        through cutting-edge technology and creative problem-solving.
+                        {t("description")}
                     </p>
                     <div className="hero-buttons">
                         <button className="btn btn-primary" onClick={() => scrollToSection('portfolio')}>
-                            View My Work
+                            {t("view-work")}
                         </button>
                         <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>
-                            Get In Touch
+                            {t("get-in-touch")}
                         </button>
                     </div>
                 </div>

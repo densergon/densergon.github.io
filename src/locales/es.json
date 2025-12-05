@@ -1,13 +1,65 @@
 {
-    "navbar": {},
+    "navbar": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "skills": "Habilidades",
+        "portfolio": "Portafolio",
+        "experience": "Experiencia",
+        "education": "Educación",
+        "contact": "Contacto"
+    },
     "hero": {
         "greeting": "Hola, soy",
         "name": "Daniel Serna",
         "title": "Ingeniero de Sistemas Computacionales",
-        "description": "Soy un entusiasta de la tecnología y la innovación, con un fuerte enfoque en la resolución de problemas creativos a través de la tecnología de vanguardia.",
-        "buttons": {
-            "viewWork": "Ver mi trabajo",
-            "getInTouch": "Contáctame"
-        }
+        "description": "Soy un entusiasta de la tecnología y la programación web , con enfoque en aplicaciones multiplataforma.",
+        "view-work": "Ver mi trabajo",
+        "get-in-touch": "Contáctame"
+    },
+    "about": {
+        "title": "¿Quién soy?",
+        "content": "Soy ingeniero de sistemas informáticos y me apasiona crear soluciones elegantes para problemas complejos. Mi trayectoria en el ámbito tecnológico ha estado impulsada por la curiosidad y un deseo constante de aprender e innovar. Con experiencia en desarrollo de software, arquitectura de sistemas y tecnologías emergentes, me motivan los retos que amplían los límites de lo posible. Creo en escribir código limpio y fácil de mantener, y en crear sistemas que se puedan ampliar. Cuando no estoy programando, me encontrarás explorando nuevas tecnologías, contribuyendo a proyectos de código abierto o compartiendo conocimientos con la comunidad de desarrolladores.",
+        "experience": "Años de experiencia",
+        "projects": "Proyectos completados"
+    },
+    "skills": {
+        "title": "Habilidades & Expertise",
+        "programming_languages": "Lenguajes de programación",
+        "frontend": "Desarrollo Frontend",
+        "backend": "Desarrollo Backend",
+        "databases": "Bases de datos",
+        "cloud": "Nube y DevOps",
+        "emerging_tech": "Tecnologías emergentes"
+    },
+    "portfolio": {
+        "title": "Proyectos destacados",
+        "content": ""
+    },
+    "experience": {
+        "title": "Experiencia profesional",
+        "web_developer": "Desarrollador Web",
+        "soltec": {
+            "short": "Contribuí al desarrollo software web usando vue 3 js.",
+            "developed1": "Trabajé en el diseño y desarrollo de interfaces de usuario",
+            "developed2": "Implementacion con ag grid",
+            "developed3": "Implementacion con naive ui",
+            "developed4": "Gestión de estado con pinia"
+        },
+        "penteon": {
+            "short": "Contribuí al desarroll web y movil de la empresa usando react js y react native.",
+            "developed1": "Desarrollé una aplicacion movil para la empresa usando react native y expo",
+            "developed2": "Subi la aplicacion movil a la app store y play store",
+            "developed3": "Implemente shacdn ui",
+            "developed4": "Utilice zustand para el manejo de estado",
+            "developed5": "Implemente server actions usando Next js"
+        },
+        "developer": "Desarrollador Web & Movil"
+    },
+    "education": {
+        "title": "Educación",
+        "university": "Instituto Politécnico Nacional",
+        "school": "Escuela Superior de Computo",
+        "year": "2017 - 2022",
+        "content": "Trayectoria académica enfocada en el desarrollo de herramientas y sistemas informáticos, integrando fundamentos teóricos, prácticas profesionales y proyectos que fortalecieron competencias técnicas y analíticas para el ámbito tecnológico actual."
     }
 }

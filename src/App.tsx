@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
+import { I18nextProvider } from 'react-i18next';
 import './App.css'
+import i18n from './utils/i18n.ts'
 import Navbar from './sections/navbar'
 import Hero from './sections/hero'
 import About from './sections/about'
@@ -31,6 +33,7 @@ function App() {
 
   return (
     <div className="app">
+      <I18nextProvider i18n={i18n} defaultNS={'translation'}>
       <Navbar isScrolled={isScrolled} scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
       <About />
@@ -41,6 +44,7 @@ function App() {
       <CV />
       <Contact />
       <Footer />
+      </I18nextProvider>
     </div>
   )
 }

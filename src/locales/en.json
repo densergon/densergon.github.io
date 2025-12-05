@@ -1,13 +1,65 @@
 {
-    "navbar": {},
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "portfolio": "Portfolio",
+        "experience": "Experience",
+        "education": "Education",
+        "contact": "Contact"
+    },
     "hero": {
         "greeting": "Hello, I'm",
         "name": "Daniel Serna",
         "title": "Computing Systems Engineer",
-        "description": "Passionate about building innovative solutions and transforming ideas into reality through cutting-edge technology and creative problem-solving.",
-        "buttons": {
-            "view-work": "View My Work",
-            "get-in-touch": "Get In Touch"
-        }
+        "description": "I'm a passionate Computing Systems Engineer with a strong focus on web development and multi-platform applications.",
+        "view-work": "View My Work",
+        "get-in-touch": "Get In Touch"
+    },
+    "about": {
+        "title": "Who Am I",
+        "content": "I'm a Computing Systems Engineer with a passion for creating elegant solutions to complex problems.My journey in technology has been driven by curiosity and a constant desire to learn and innovate.With expertise spanning software development, system architecture, and emerging technologies, I thrive on challenges that push the boundaries of what's possible. I believe in writing clean, maintainable code and building systems that scale.When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
+        "experience": "Years Experience",
+        "projects": "Projects Completed"
+    },
+    "skills": {
+        "title": "Skills & Expertise",
+        "programming_languages": "Programming Languages",
+        "frontend": "Frontend development",
+        "backend": "Backend development",
+        "databases": "Databases",
+        "cloud": "Cloud & DevOps",
+        "emerging_tech": "Emerging Tech"
+    },
+    "portfolio": {
+        "title": "Featured Projects",
+        "content": ""
+    },
+    "experience": {
+        "title": "Professional Experience",
+        "web_developer": "Web Developer",
+        "soltec": {
+            "short": "Contributed to web development using Vue 3 js.",
+            "developed1": "Designing and developing user interfaces",
+            "developed2": "Implementing ag grid",
+            "developed3": "Implementing naive ui",
+            "developed4": "Implementing pinia for state management"
+        },
+        "penteon": {
+            "short": "Contributed to the company web development and mobile app development using React js and React native.",
+            "developed1": "Developed a mobile app for the company using react native and expo",
+            "developed2": "Deployed the mobile app to the app store and play store",
+            "developed3": "Implemented shacdn ui for the web app",
+            "developed4": "Used zustand for state management in the web app",
+            "developed5": "Implemented server actions using Next js"
+        },
+        "developer": "Mobile & Web Developer"
+    },
+    "education": {
+        "title": "Education",
+        "university": "Instituto Politécnico Nacional",
+        "school": "Escuela Superior de Computo",
+        "year": "2017 - 2022",
+        "content": "Academic background in Computing Systems Engineering, with a focus on web development and multi-platform applications."
     }
 }
