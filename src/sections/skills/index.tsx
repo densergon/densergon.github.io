@@ -16,9 +16,7 @@ function Skills() {
                         <span className="skill-tag">TypeScript</span>
                         <span className="skill-tag">Python</span>
                         <span className="skill-tag">Java</span>
-                        <span className="skill-tag">C++</span>
                         <span className="skill-tag">Swift</span>
-                        <span className="skill-tag">Dart</span>
                     </div>
                 </div>
 
@@ -62,7 +60,6 @@ function Skills() {
                     <div className="skill-icon">☁️</div>
                     <h3>{t('cloud')}</h3>
                     <div className="skill-tags">
-                        <span className="skill-tag">Git</span>
                         <span className="skill-tag">Docker</span>
                         <span className="skill-tag">S3</span>
                         <span className="skill-tag">Linux</span>

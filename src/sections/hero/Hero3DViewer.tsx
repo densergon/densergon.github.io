@@ -51,7 +51,7 @@ function FallbackBox() {
 
 export default function Hero3DViewer() {
     return (
-        <div style={{ width: '100%', height: '100%', minHeight: '400px' }}>
+        <div style={{ width: '100%', height: '100%', minHeight: '250px' }}>
             <Canvas
                 camera={{ position: [0, 0, 5], fov: 45 }}
                 style={{ background: 'transparent' }}

@@ -23,10 +23,8 @@ function Education() {
                     <div className="education-icon">📜</div>
                     <h3>Certifications</h3>
                     <ul className="certification-list">
-                        <li>AWS Certified Solutions Architect</li>
-                        <li>Google Cloud Professional Developer</li>
-                        <li>Certified Kubernetes Administrator (CKA)</li>
-                        <li>MongoDB Certified Developer</li>
+                        <li>NDG Linux Unhatched</li>
+                        <li>Google Cloud Computing Foundations</li>
                     </ul>
                 </div>
             </div>

@@ -87,7 +87,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 10vh;
 }
 
 .hero-content {
@@ -680,7 +679,6 @@
 @media (max-width: 968px) {
   .hero-content {
     grid-template-columns: 1fr;
-    padding-top: 10vh;
   }
 
   .hero-visual {
@@ -754,5 +752,120 @@
 
   .hero {
     padding-top: 100px;
+  }
+}
+
+/* Mobile Navigation */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+
+.hamburger-btn span {
+  width: 100%;
+  height: 3px;
+  background: var(--color-text-primary);
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.hamburger-btn.open span:first-child {
+  transform: rotate(45deg);
+}
+
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--color-bg-secondary);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 80px 2rem 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-menu li a,
+.sidebar-menu li button {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li button:hover {
+  color: var(--color-accent-primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 968px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
   }
 }
