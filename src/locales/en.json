@@ -61,5 +61,17 @@
         "school": "Escuela Superior de Computo",
         "year": "2017 - 2022",
         "content": "Academic background in Computing Systems Engineering, with a focus on web development and multi-platform applications."
-    }
+    },
+    "contact": {
+        "title": "Get In Touch",
+        "name": "Your Name",
+        "email": "Your Email",
+        "message": "Your Message",
+        "send-message": "Send Message",
+        "success": "Message sent successfully! I will get back to you soon.",
+        "error": "There was an error sending the message. Please try again later.",
+        "phone": "Phone",
+        "location": "Location",
+        "location-description": "Mexico City, Mexico"
+}
 }

@@ -61,5 +61,17 @@
         "school": "Escuela Superior de Computo",
         "year": "2017 - 2022",
         "content": "Trayectoria académica enfocada en el desarrollo de herramientas y sistemas informáticos, integrando fundamentos teóricos, prácticas profesionales y proyectos que fortalecieron competencias técnicas y analíticas para el ámbito tecnológico actual."
+    },
+    "contact": {
+        "title": "Ponte en contacto",
+        "name": "Tu nombre",
+        "email": "Tu correo electrónico",
+        "message": "Tu mensaje",
+        "send-message": "Enviar mensaje",
+        "success": "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
+        "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
+        "phone": "Teléfono",
+        "location": "Ubicación",
+        "location-description": "Ciudad de México, México"
     }
 }

@@ -61,7 +61,7 @@ function Skills() {
                     <h3>{t('cloud')}</h3>
                     <div className="skill-tags">
                         <span className="skill-tag">Docker</span>
-                        <span className="skill-tag">S3</span>
+                        <span className="skill-tag">AWS S3</span>
                         <span className="skill-tag">Linux</span>
                     </div>
                 </div>

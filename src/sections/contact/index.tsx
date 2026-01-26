@@ -1,37 +1,39 @@
+import { useTranslation } from "react-i18next";
+
 function Contact() {
+    const { t } = useTranslation("contact");
     return (
         <section id="contact" className="contact">
             <div className="section-header">
-                <h2>Get In Touch</h2>
+                <h2>{t('title')}</h2>
                 <div className="section-divider"></div>
             </div>
             <div className="contact-content">
                 <div className="contact-info">
-                    <h3>Let's Connect</h3>
+                    <h3>{t('title')}</h3>
                     <p>
-                        I'm always interested in hearing about new projects and opportunities.
-                        Whether you have a question or just want to say hi, feel free to reach out!
+                        {t('content')}
                     </p>
                     <div className="contact-methods">
                         <div className="contact-method">
                             <div className="contact-icon">📧</div>
                             <div>
-                                <h4>Email</h4>
+                                <h4>{t('email')}</h4>
                                 <a href="mailto:daniel.serna@email.com">daniel.serna@email.com</a>
                             </div>
                         </div>
                         <div className="contact-method">
                             <div className="contact-icon">📱</div>
                             <div>
-                                <h4>Phone</h4>
+                                <h4>{t('phone')}</h4>
                                 <a href="tel:+1234567890">+1 (234) 567-890</a>
                             </div>
                         </div>
                         <div className="contact-method">
                             <div className="contact-icon">📍</div>
                             <div>
-                                <h4>Location</h4>
-                                <p>San Francisco, CA</p>
+                                <h4>{t('location')}</h4>
+                                <p>{t('location-description')}</p>
                             </div>
                         </div>
                     </div>
