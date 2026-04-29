@@ -33,7 +33,21 @@
     },
     "portfolio": {
         "title": "Featured Projects",
-        "content": ""
+        "filters": {
+            "all": "All",
+            "web": "Web",
+            "mobile": "Mobile",
+            "system": "System",
+            "ai": "AI"
+        },
+        "view_project": "View Project",
+        "view_code": "View Code",
+        "no_projects": "No projects found in this category."
+    },
+    "cv": {
+        "title": "Professional Curriculum",
+        "description": "Download my full resume to see a detailed overview of my experience, certifications, and technical skills.",
+        "download_button": "Download CV (PDF)"
     },
     "experience": {
         "title": "Professional Experience",

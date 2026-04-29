@@ -28,20 +28,22 @@ function Navbar({ isScrolled, scrollToSection }: { isScrolled: boolean, scrollTo
 
                 {/* Desktop Menu */}
                 <ul className="nav-menu desktop-menu">
-                    <li><a onClick={() => scrollToSection('home')}>{t('home')}</a></li>
-                    <li><a onClick={() => scrollToSection('about')}>{t('about')}</a></li>
-                    <li><a onClick={() => scrollToSection('skills')}>{t('skills')}</a></li>
-                    <li><a onClick={() => scrollToSection('portfolio')}>{t('portfolio')}</a></li>
-                    <li><a onClick={() => scrollToSection('experience')}>{t('experience')}</a></li>
-                    <li><a onClick={() => scrollToSection('education')}>{t('education')}</a></li>
-                    <li><a onClick={() => scrollToSection('contact')}>{t('contact')}</a></li>
+                        <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && scrollToSection('home')} onClick={() => scrollToSection('home')}>{t('home')}</a></li>
+                        <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && scrollToSection('about')} onClick={() => scrollToSection('about')}>{t('about')}</a></li>
+                        <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && scrollToSection('skills')} onClick={() => scrollToSection('skills')}>{t('skills')}</a></li>
+                        <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && scrollToSection('portfolio')} onClick={() => scrollToSection('portfolio')}>{t('portfolio')}</a></li>
+                        <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && scrollToSection('experience')} onClick={() => scrollToSection('experience')}>{t('experience')}</a></li>
+                        <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && scrollToSection('education')} onClick={() => scrollToSection('education')}>{t('education')}</a></li>
+                        <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && scrollToSection('contact')} onClick={() => scrollToSection('contact')}>{t('contact')}</a></li>
+
                     <li>
-                        <button
-                            onClick={toggleLanguage}
-                            aria-label="Cambiar idioma"
-                        >
-                            {i18n.language === 'es' ? 'EN' : 'ES'}
-                        </button>
+                                <button
+                                    onClick={toggleLanguage}
+                                    aria-label={i18n.language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+                                >
+                                    {i18n.language === 'es' ? 'EN' : 'ES'}
+                                </button>
+
                     </li>
                 </ul>
 
@@ -65,20 +67,22 @@ function Navbar({ isScrolled, scrollToSection }: { isScrolled: boolean, scrollTo
                 {/* Mobile Sidebar */}
                 <div className={`sidebar ${isOpen ? 'open' : ''}`}>
                     <ul className="sidebar-menu">
-                        <li><a onClick={() => handleLinkClick('home')}>{t('home')}</a></li>
-                        <li><a onClick={() => handleLinkClick('about')}>{t('about')}</a></li>
-                        <li><a onClick={() => handleLinkClick('skills')}>{t('skills')}</a></li>
-                        <li><a onClick={() => handleLinkClick('portfolio')}>{t('portfolio')}</a></li>
-                        <li><a onClick={() => handleLinkClick('experience')}>{t('experience')}</a></li>
-                        <li><a onClick={() => handleLinkClick('education')}>{t('education')}</a></li>
-                        <li><a onClick={() => handleLinkClick('contact')}>{t('contact')}</a></li>
+                            <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('home')} onClick={() => handleLinkClick('home')}>{t('home')}</a></li>
+                            <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('about')} onClick={() => handleLinkClick('about')}>{t('about')}</a></li>
+                            <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('skills')} onClick={() => handleLinkClick('skills')}>{t('skills')}</a></li>
+                            <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('portfolio')} onClick={() => handleLinkClick('portfolio')}>{t('portfolio')}</a></li>
+                            <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('experience')} onClick={() => handleLinkClick('experience')}>{t('experience')}</a></li>
+                            <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('education')} onClick={() => handleLinkClick('education')}>{t('education')}</a></li>
+                            <li><a tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && handleLinkClick('contact')} onClick={() => handleLinkClick('contact')}>{t('contact')}</a></li>
+
                         <li>
-                            <button
-                                onClick={toggleLanguage}
-                                aria-label="Cambiar idioma"
-                            >
-                                {i18n.language === 'es' ? 'EN' : 'ES'}
-                            </button>
+                                <button
+                                    onClick={toggleLanguage}
+                                    aria-label={i18n.language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+                                >
+                                    {i18n.language === 'es' ? 'EN' : 'ES'}
+                                </button>
+
                         </li>
                     </ul>
                 </div>

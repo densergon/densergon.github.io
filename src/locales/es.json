@@ -33,7 +33,21 @@
     },
     "portfolio": {
         "title": "Proyectos destacados",
-        "content": ""
+        "filters": {
+            "all": "Todos",
+            "web": "Web",
+            "mobile": "Móvil",
+            "system": "Sistemas",
+            "ai": "IA"
+        },
+        "view_project": "Ver Proyecto",
+        "view_code": "Ver Código",
+        "no_projects": "No se encontraron proyectos en esta categoría."
+    },
+    "cv": {
+        "title": "Currículum Profesional",
+        "description": "Descarga mi currículum completo para ver un resumen detallado de mi experiencia, certificaciones y habilidades técnicas.",
+        "download_button": "Descargar CV (PDF)"
     },
     "experience": {
         "title": "Experiencia profesional",

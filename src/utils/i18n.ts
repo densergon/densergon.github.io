@@ -13,6 +13,7 @@ const resources = {
     experience: en.experience,
     education: en.education,
     contact: en.contact,
+    cv: en.cv,
   },
   es: {
     navbar: es.navbar,
@@ -23,6 +24,7 @@ const resources = {
     experience: es.experience,
     education: es.education,
     contact: es.contact,
+    cv: es.cv,
   }
 };
 
