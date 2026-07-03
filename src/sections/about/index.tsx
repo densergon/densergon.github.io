@@ -14,7 +14,7 @@ function About() {
                     </p>
                     <div className="about-stats">
                         <div className="stat-item">
-                            <h3 className="gradient-text">5+</h3>
+                            <h3 className="gradient-text">4+</h3>
                             <p>{t('experience')}</p>
                         </div>
                         <div className="stat-item">
