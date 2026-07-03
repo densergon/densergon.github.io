@@ -1,6 +1,6 @@
 import { useRef, useMemo, Suspense, Component, type ReactNode } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, Environment, MeshDistortMaterial } from '@react-three/drei'
+import { Float, Environment, MeshDistortMaterial, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
 class ErrorBoundary extends Component<{ children: ReactNode, fallback: ReactNode }, { hasError: boolean }> {
@@ -135,10 +135,11 @@ export default function HeroScene() {
                     <Suspense fallback={<FallbackBox />}>
                         <Shapes />
                         <Particles count={150} />
+                        <Environment preset="city" />
                     </Suspense>
                 </ErrorBoundary>
 
-                <Environment preset="night" />
+                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
             </Canvas>
         </div>
     )
