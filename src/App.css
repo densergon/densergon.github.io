@@ -60,7 +60,7 @@
   cursor: pointer;
   font-weight: 500;
   position: relative;
-  padding: 0rem 0;
+  padding: 0.5rem 0;
 }
 
 .nav-menu li button::after {
@@ -73,8 +73,16 @@
   background: var(--gradient-primary);
 }
 
+.nav-menu li a.active::after {
+  width: 100%;
+}
+
 .nav-menu li a:hover::after {
   width: 100%;
+}
+
+.nav-menu li a.active {
+  color: var(--color-accent-primary);
 }
 
 .nav-menu li button:hover::after {
@@ -138,6 +146,8 @@
   justify-content: center;
   align-items: center;
   animation: slideInRight 0.8s ease-out;
+  width: 100%;
+  height: min(500px, 50vh);
 }
 
 .floating-card {
@@ -304,6 +314,9 @@
   font-size: 0.9rem;
   border: 1px solid rgba(99, 102, 241, 0.2);
   transition: all var(--transition-fast);
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .skill-tag:hover {
@@ -614,6 +627,8 @@
 /* Contact Form */
 .contact-form {
   padding: var(--spacing-xl);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .form-group {
@@ -753,6 +768,18 @@
   .hero {
     padding-top: 100px;
   }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+  }
+
+  .timeline-dot {
+    display: none;
+  }
 }
 
 /* Mobile Navigation */
@@ -846,16 +873,37 @@
   color: var(--color-text-primary);
   text-decoration: none;
   display: block;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
   cursor: pointer;
   background: none;
   border: none;
-  padding: 0;
+  padding: 0.25rem 0;
   text-align: left;
+  position: relative;
+}
+
+.sidebar-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width var(--transition-fast);
+}
+
+.sidebar-menu li a:hover::after,
+.sidebar-menu li a.active::after {
+  width: 100%;
 }
 
 .sidebar-menu li a:hover,
 .sidebar-menu li button:hover {
+  color: var(--color-accent-primary);
+}
+
+.sidebar-menu li a.active {
   color: var(--color-accent-primary);
 }
 
@@ -868,4 +916,14 @@
   .hamburger-btn {
     display: flex;
   }
+}
+
+/* Spinner for 3D fallback */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(99, 102, 241, 0.2);
+  border-top-color: var(--color-accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }

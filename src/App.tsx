@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { I18nextProvider } from 'react-i18next';
 import './App.css'
 import i18n from './utils/i18n.ts'
@@ -13,28 +13,76 @@ import CV from './sections/cv'
 import Contact from './sections/contact'
 import Footer from './sections/footer'
 
+const SECTION_IDS = ['home', 'about', 'skills', 'portfolio', 'experience', 'education', 'contact']
+
 function App() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
+  useEffect(() => {
+    const observers: IntersectionObserver[] = []
+    SECTION_IDS.forEach(id => {
+      const element = document.getElementById(id)
+      if (!element) return
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(id)
+          }
+        },
+        { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' }
+      )
+      observer.observe(element)
+      observers.push(observer)
+    })
+    return () => observers.forEach(o => o.disconnect())
+  }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.setAttribute('data-revealed', 'true')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+    const sections = document.querySelectorAll('section[id]:not(#home)')
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const offset = 80
+      const top = element.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
     }
-  }
+  }, [])
 
   return (
     <div className="app">
       <I18nextProvider i18n={i18n} defaultNS={'translation'}>
-      <Navbar isScrolled={isScrolled} scrollToSection={scrollToSection} />
+      <Navbar isScrolled={isScrolled} activeSection={activeSection} scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
       <About />
       <Skills />

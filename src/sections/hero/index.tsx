@@ -1,5 +1,21 @@
-import Hero3DViewer from './Hero3DViewer'
+import { lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next';
+
+const Hero3DViewer = lazy(() => import('./Hero3DViewer'))
+
+function HeroFallback() {
+    return (
+        <div style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}>
+            <div className="spinner" />
+        </div>
+    )
+}
 
 function Hero({ scrollToSection }: { scrollToSection: (section: string) => void }) {
     const { t } = useTranslation("hero");
@@ -23,11 +39,14 @@ function Hero({ scrollToSection }: { scrollToSection: (section: string) => void 
                         </button>
                     </div>
                 </div>
-                <div className="hero-visual" style={{ width: '100%', height: '500px' }}>
-                    <Hero3DViewer />
+                <div className="hero-visual">
+                    <Suspense fallback={<HeroFallback />}>
+                        <Hero3DViewer />
+                    </Suspense>
                 </div>
             </div>
         </section>
     )
 }
+
 export default Hero
