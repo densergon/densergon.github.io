@@ -1,84 +1,106 @@
+import { motion, type Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
+const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: "easeOut", delay: i * 0.1 },
+    }),
+}
+
+const tagVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i: number) => ({
+        opacity: 1,
+        scale: 1,
+        transition: { type: "spring", stiffness: 200, damping: 15, delay: 0.3 + i * 0.04 },
+    }),
+}
+
+const categories = [
+    {
+        icon: '💻', key: 'programming_languages',
+        tags: ['TypeScript', 'JavaScript', 'Python', 'Java'],
+    },
+    {
+        icon: '⚛️', key: 'frontend',
+        tags: ['React', 'Next.js', 'Vue 3', 'React Native', 'Framer Motion', 'PixiJS'],
+    },
+    {
+        icon: '🔧', key: 'backend',
+        tags: ['Node.js', 'NestJS', 'FastAPI', 'REST APIs', 'WebSockets'],
+    },
+    {
+        icon: '🗄️', key: 'databases',
+        tags: ['PostgreSQL', 'MySQL', 'MongoDB', 'Firebase', 'Prisma ORM'],
+    },
+    {
+        icon: '☁️', key: 'cloud',
+        tags: ['Docker', 'Linux', 'AWS S3', 'Google Cloud', 'CI/CD'],
+    },
+    {
+        icon: '🤖', key: 'emerging_tech',
+        tags: ['IoT / MQTT', 'Web Workers', 'PWA', 'Biometric Auth', 'AI / LLM'],
+    },
+]
+
 function Skills() {
     const { t } = useTranslation("skills");
     return (
         <section id="skills" className="skills">
-            <div className="section-header">
+            <motion.div
+                className="section-header"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
                 <h2>{t('title')}</h2>
-                <div className="section-divider"></div>
-            </div>
+                <motion.div
+                    className="section-divider"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 80 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                />
+            </motion.div>
             <div className="skills-grid">
-                <div className="skill-category card">
-                    <div className="skill-icon">💻</div>
-                    <h3>{t('programming_languages')}</h3>
-                    <div className="skill-tags">
-                        <span className="skill-tag">TypeScript</span>
-                        <span className="skill-tag">JavaScript</span>
-                        <span className="skill-tag">Python</span>
-                        <span className="skill-tag">Java</span>
-                    </div>
-                </div>
-
-                <div className="skill-category card">
-                    <div className="skill-icon">⚛️</div>
-                    <h3>{t('frontend')}</h3>
-                    <div className="skill-tags">
-                        <span className="skill-tag">React</span>
-                        <span className="skill-tag">Next.js</span>
-                        <span className="skill-tag">Vue 3</span>
-                        <span className="skill-tag">React Native</span>
-                        <span className="skill-tag">Framer Motion</span>
-                        <span className="skill-tag">PixiJS</span>
-                    </div>
-                </div>
-
-                <div className="skill-category card">
-                    <div className="skill-icon">🔧</div>
-                    <h3>{t('backend')}</h3>
-                    <div className="skill-tags">
-                        <span className="skill-tag">Node.js</span>
-                        <span className="skill-tag">NestJS</span>
-                        <span className="skill-tag">FastAPI</span>
-                        <span className="skill-tag">REST APIs</span>
-                        <span className="skill-tag">WebSockets</span>
-                    </div>
-                </div>
-
-                <div className="skill-category card">
-                    <div className="skill-icon">🗄️</div>
-                    <h3>{t('databases')}</h3>
-                    <div className="skill-tags">
-                        <span className="skill-tag">PostgreSQL</span>
-                        <span className="skill-tag">MySQL</span>
-                        <span className="skill-tag">MongoDB</span>
-                        <span className="skill-tag">Firebase</span>
-                        <span className="skill-tag">Prisma ORM</span>
-                    </div>
-                </div>
-
-                <div className="skill-category card">
-                    <div className="skill-icon">☁️</div>
-                    <h3>{t('cloud')}</h3>
-                    <div className="skill-tags">
-                        <span className="skill-tag">Docker</span>
-                        <span className="skill-tag">Linux</span>
-                        <span className="skill-tag">AWS S3</span>
-                        <span className="skill-tag">Google Cloud</span>
-                        <span className="skill-tag">CI/CD</span>
-                    </div>
-                </div>
-
-                <div className="skill-category card">
-                    <div className="skill-icon">🤖</div>
-                    <h3>{t('emerging_tech')}</h3>
-                    <div className="skill-tags">
-                        <span className="skill-tag">IoT / MQTT</span>
-                        <span className="skill-tag">Web Workers</span>
-                        <span className="skill-tag">PWA</span>
-                        <span className="skill-tag">Biometric Auth</span>
-                        <span className="skill-tag">AI / LLM</span>
-                    </div>
-                </div>
+                {categories.map((cat, i) => (
+                    <motion.div
+                        key={cat.key}
+                        className="skill-category card"
+                        custom={i}
+                        variants={cardVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        <div className="skill-icon">{cat.icon}</div>
+                        <h3>{t(cat.key)}</h3>
+                        <div className="skill-tags">
+                            {cat.tags.map((tag, j) => (
+                                <motion.span
+                                    key={tag}
+                                    className="skill-tag"
+                                    custom={j}
+                                    variants={tagVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    whileHover={{
+                                        y: -2,
+                                        borderColor: 'var(--color-accent-primary)',
+                                        backgroundColor: 'rgba(99, 102, 241, 0.2)',
+                                    }}
+                                >
+                                    {tag}
+                                </motion.span>
+                            ))}
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </section>
     )

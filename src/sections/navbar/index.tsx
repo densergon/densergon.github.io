@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
+const sections = ['home', 'about', 'skills', 'portfolio', 'experience', 'education', 'contact'] as const;
 
 function Navbar({ isScrolled, activeSection, scrollToSection }: { isScrolled: boolean, activeSection: string, scrollToSection: (section: string) => void }) {
     const { i18n, t } = useTranslation("navbar");
@@ -10,16 +13,12 @@ function Navbar({ isScrolled, activeSection, scrollToSection }: { isScrolled: bo
         i18n.changeLanguage(newLang);
     };
 
-    const toggleSidebar = () => {
-        setIsOpen(!isOpen);
-    };
+    const toggleSidebar = () => setIsOpen(!isOpen);
 
     const handleLinkClick = (section: string) => {
         scrollToSection(section);
         setIsOpen(false);
     };
-
-    const sections = ['home', 'about', 'skills', 'portfolio', 'experience', 'education', 'contact'] as const;
 
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -36,6 +35,13 @@ function Navbar({ isScrolled, activeSection, scrollToSection }: { isScrolled: bo
                                 onClick={() => scrollToSection(s)}
                             >
                                 {t(s)}
+                                {activeSection === s && (
+                                    <motion.div
+                                        layoutId="nav-underline"
+                                        className="nav-underline"
+                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                    />
+                                )}
                             </a>
                         </li>
                     ))}
@@ -70,6 +76,13 @@ function Navbar({ isScrolled, activeSection, scrollToSection }: { isScrolled: bo
                                     onClick={() => handleLinkClick(s)}
                                 >
                                     {t(s)}
+                                    {activeSection === s && (
+                                        <motion.div
+                                            layoutId="sidebar-underline"
+                                            className="sidebar-underline"
+                                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                        />
+                                    )}
                                 </a>
                             </li>
                         ))}

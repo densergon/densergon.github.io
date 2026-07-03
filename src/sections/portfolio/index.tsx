@@ -1,22 +1,62 @@
+import { motion, type Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { FaGithub } from "react-icons/fa";
+
+const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: "easeOut" },
+    },
+}
 
 function Portfolio() {
     const { t } = useTranslation("portfolio");
     return (
         <section id="portfolio" className="portfolio">
-            <div className="section-header">
+            <motion.div
+                className="section-header"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
                 <h2>{t("title")}</h2>
-                <div className="section-divider"></div>
-            </div>
+                <motion.div
+                    className="section-divider"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 80 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                />
+            </motion.div>
             <div className="portfolio-grid">
-                <div className="project-card card">
+                <motion.div
+                    className="project-card card"
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    whileHover={{ y: -8 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                     <div className="project-image">
-                        <div className="project-overlay">
-                            <a href="https://github.com/densergon/cryptovisual" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <motion.div
+                            className="project-overlay"
+                            initial={{ opacity: 0 }}
+                            whileHover={{ opacity: 1 }}
+                        >
+                            <a
+                                href="https://github.com/densergon/cryptovisual"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary"
+                                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                            >
                                 <FaGithub /> View Project
                             </a>
-                        </div>
+                        </motion.div>
                     </div>
                     <div className="project-info">
                         <h3>CryptoVisual</h3>
@@ -32,7 +72,7 @@ function Portfolio() {
                             <span>PWA</span>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     )

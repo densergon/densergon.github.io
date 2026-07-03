@@ -73,10 +73,6 @@
   background: var(--gradient-primary);
 }
 
-.nav-menu li a.active::after {
-  width: 100%;
-}
-
 .nav-menu li a:hover::after {
   width: 100%;
 }
@@ -87,6 +83,26 @@
 
 .nav-menu li button:hover::after {
   width: 100%;
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 1px;
+}
+
+.sidebar-underline {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  border-radius: 1px;
 }
 
 /* Hero Section */
@@ -101,11 +117,9 @@
   display: grid;
   grid-template-columns: 55% 45%;
   align-items: center;
-  animation: fadeIn 1s ease-out;
 }
 
 .hero-text {
-  animation: slideInLeft 0.8s ease-out;
 }
 
 .hero-greeting {
@@ -145,74 +159,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: slideInRight 0.8s ease-out;
   width: 100%;
   height: min(500px, 50vh);
 }
 
-.floating-card {
-  background: var(--color-bg-card);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-lg);
-  animation: float 6s ease-in-out infinite;
-  position: relative;
-}
-
-.floating-card::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-lg);
-  opacity: 0.3;
-  z-index: -1;
-  filter: blur(10px);
-  animation: glow 3s ease-in-out infinite;
-}
-
-.code-snippet {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.code-line {
-  margin: 0.25rem 0;
-}
-
-.code-indent {
-  padding-left: 2rem;
-}
-
-.code-keyword {
-  color: #c678dd;
-}
-
-.code-variable {
-  color: #e06c75;
-}
-
-.code-operator {
-  color: #56b6c2;
-}
-
-.code-bracket {
-  color: #abb2bf;
-}
-
-.code-property {
-  color: #61afef;
-}
-
-.code-string {
-  color: #98c379;
-}
+/* Card hover lift is handled by Framer Motion */
 
 /* Section Headers */
 .section-header {

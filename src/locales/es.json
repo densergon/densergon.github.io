@@ -68,6 +68,7 @@
     },
     "contact": {
         "title": "Ponte en contacto",
+        "content": "¿Tienes un proyecto en mente o solo quieres charlar? No dudes en contactarme — siempre estoy abierto a nuevas oportunidades.",
         "name": "Tu nombre",
         "email": "Correo electrónico",
         "message": "Tu mensaje",

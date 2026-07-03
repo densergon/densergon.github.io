@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { I18nextProvider } from 'react-i18next';
 import './App.css'
 import i18n from './utils/i18n.ts'
+import HeroBackground from './components/HeroBackground.tsx'
 import Navbar from './sections/navbar'
 import Hero from './sections/hero'
 import About from './sections/about'
@@ -53,23 +54,6 @@ function App() {
     return () => observers.forEach(o => o.disconnect())
   }, [])
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.setAttribute('data-revealed', 'true')
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-    const sections = document.querySelectorAll('section[id]:not(#home)')
-    sections.forEach(section => observer.observe(section))
-    return () => observer.disconnect()
-  }, [])
-
   const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -81,6 +65,7 @@ function App() {
 
   return (
     <div className="app">
+      <HeroBackground />
       <I18nextProvider i18n={i18n} defaultNS={'translation'}>
       <Navbar isScrolled={isScrolled} activeSection={activeSection} scrollToSection={scrollToSection} />
       <Hero scrollToSection={scrollToSection} />
