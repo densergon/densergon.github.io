@@ -95,7 +95,7 @@ Defined in `:root` in `index.css`. Available globally. Key categories:
 - **Transitions**: `--transition-fast/normal/slow`
 
 ### Component Styles
-All component-specific styles live in `App.css`. Use BEM-ish class naming. Tailwind is installed but not used for utility classes.
+All component-specific styles live in `App.css`. Use BEM-ish class naming. Tailwind utility classes used sparingly (e.g., `border-t`, `my-1`).
 
 ### Responsive Breakpoints
 - `max-width: 968px` — hero/contact go 1-column, desktop menu → hamburger
@@ -121,12 +121,12 @@ All component-specific styles live in `App.css`. Use BEM-ish class naming. Tailw
 
 ---
 
-## 3D Component (Hero3DViewer)
+## 3D Component (HeroScene)
 
-- Renders `retro-computer.glb` model via `@react-three/drei`'s `useGLTF`.
-- Wrapped in `<Suspense>` with wireframe cube fallback.
-- `ErrorBoundary` class component catches load failures gracefully.
-- Features: Float animation, OrbitControls (auto-rotate, no zoom), Environment preset "city".
+- Abstract shapes + particle system rendered via `@react-three/fiber` and `@react-three/drei`.
+- `memo`-wrapped with fade-in transition via `ReadySignal` callback.
+- `Suspense` fallback: spinner from parent (`SceneFallback` in `hero/index.tsx`).
+- Features: Float animation, particle field, OrbitControls (auto-rotate, no zoom), Environment preset "city".
 
 ---
 
@@ -180,12 +180,16 @@ GitHub Actions workflow (`.github/workflows/deploy.yml`):
 | 4.1 | Focus styles & reduced motion | `:focus-visible` outlines on all interactive elements; `prefers-reduced-motion` disables animations |
 | 4.2 | Meta tags & SEO | Description, OG tags, improved title in `index.html` |
 | 4.3 | GPU acceleration | `will-change: opacity` on animated background for smoother rendering |
+| 5.1 | CV download link | Button changed to `<a>` with direct Google Drive download link, opens in new tab |
+| 5.2 | Navbar underline polish | Wrapped active indicators in `AnimatePresence` for smooth enter/exit transitions |
+| 5.3 | About scroll reveal refactor | Replaced `whileInView` with `useInView` + `animate` for explicit imperative control |
+| 5.4 | HeroScene GPU + memo | Removed `ErrorBoundary`/`FallbackBox`; added fade-in via `ReadySignal` callback, `memo` wrapper, particle optimization |
+| 5.5 | Hero title split | `title` → `titlea` + `titleb` with responsive subtitle styling using `clamp()` |
 
 ## Known Gaps (Non-Breaking)
 
 1. Portfolio section has no real project data (content is commented out).
-2. CV download button has no file or handler.
-3. Contact form has no submit handler (page refreshes on submit).
-4. `iconsax-reactjs` dependency is unused.
-5. No test infrastructure.
-6. `bun.lock` and `pnpm-lock.yaml` both exist (CI uses Bun).
+2. Contact form has no submit handler (page refreshes on submit).
+3. `iconsax-reactjs` dependency is unused.
+4. No test infrastructure.
+5. `bun.lock` and `pnpm-lock.yaml` both exist (CI uses Bun).

@@ -14,7 +14,7 @@
   right: 0;
   z-index: 1000;
   padding: 1.5rem 0;
-  transition: all var(--transition-normal);
+  transition: background var(--transition-normal), padding var(--transition-normal);
   background: transparent;
 }
 
@@ -140,6 +140,10 @@
   color: var(--color-text-secondary);
   font-weight: 600;
   margin-bottom: var(--spacing-lg);
+}
+
+.hero-title-sub {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
 }
 
 .hero-description {

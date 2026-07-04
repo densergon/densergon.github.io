@@ -36,30 +36,38 @@ const revealVariants: Variants = {
 
 function About() {
     const { t } = useTranslation("about");
+
+    const headerRef = useRef<HTMLDivElement>(null)
+    const headerInView = useInView(headerRef, { once: true, amount: 0.3 })
+
+    const contentRef = useRef<HTMLDivElement>(null)
+    const contentInView = useInView(contentRef, { once: true, amount: 0.3 })
+
+    const dividerInView = useInView(headerRef, { once: true })
+
     return (
         <section id="about" className="about">
             <motion.div
+                ref={headerRef}
                 className="section-header"
                 variants={revealVariants}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                animate={headerInView ? "visible" : "hidden"}
             >
                 <h2>{t('title')}</h2>
                 <motion.div
                     className="section-divider"
                     initial={{ width: 0 }}
-                    whileInView={{ width: 80 }}
-                    viewport={{ once: true }}
+                    animate={dividerInView ? { width: 80 } : { width: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 />
             </motion.div>
             <motion.div
+                ref={contentRef}
                 className="about-content"
                 variants={revealVariants}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
+                animate={contentInView ? "visible" : "hidden"}
             >
                 <div className="about-text">
                     <p>{t('content')}</p>

@@ -1,37 +1,19 @@
-import { useRef, useMemo, Suspense, Component, type ReactNode } from 'react'
+import { useState, useRef, useMemo, useEffect, useCallback, Suspense, memo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Float, Environment, MeshDistortMaterial, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
-
-class ErrorBoundary extends Component<{ children: ReactNode, fallback: ReactNode }, { hasError: boolean }> {
-    constructor(props: { children: ReactNode, fallback: ReactNode }) {
-        super(props)
-        this.state = { hasError: false }
-    }
-
-    static getDerivedStateFromError() {
-        return { hasError: true }
-    }
-
-    componentDidCatch(error: any, errorInfo: any) {
-        console.error("3D Scene Error:", error, errorInfo)
-    }
-
-    render() {
-        if (this.state.hasError) return this.props.fallback
-        return this.props.children
-    }
-}
 
 function Particles({ count = 120 }) {
     const meshRef = useRef<THREE.Points>(null)
 
     const geometry = useMemo(() => {
         const positions = new Float32Array(count * 3)
+        // eslint-disable-next-line react-hooks/purity -- particles need random init, intentional
+        const rand = (a = 1, b = 0) => b + a * (Math.random() - 0.5)
         for (let i = 0; i < count; i++) {
-            positions[i * 3] = (Math.random() - 0.5) * 12
-            positions[i * 3 + 1] = (Math.random() - 0.5) * 8
-            positions[i * 3 + 2] = (Math.random() - 0.5) * 6
+            positions[i * 3] = rand(12)
+            positions[i * 3 + 1] = rand(8)
+            positions[i * 3 + 2] = rand(6)
         }
         const geo = new THREE.BufferGeometry()
         geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
@@ -103,25 +85,35 @@ function Shapes() {
     )
 }
 
-function FallbackBox() {
-    const meshRef = useRef<THREE.Mesh>(null)
-    useFrame((_, delta) => {
-        if (meshRef.current) {
-            meshRef.current.rotation.x += delta * 0.5
-            meshRef.current.rotation.y += delta * 0.5
-        }
-    })
+function ReadySignal({ onReady }: { onReady: () => void }) {
+    useEffect(() => { onReady() }, [onReady])
+    return null
+}
+
+function SceneInner({ onReady }: { onReady: () => void }) {
     return (
-        <mesh ref={meshRef}>
-            <boxGeometry args={[2, 2, 2]} />
-            <meshStandardMaterial color="#6366f1" wireframe />
-        </mesh>
+        <>
+            <Shapes />
+            <Particles count={150} />
+            <Environment preset="city" />
+            <ReadySignal onReady={onReady} />
+        </>
     )
 }
 
-export default function HeroScene() {
+const HeroScene = memo(function HeroScene() {
+    const [ready, setReady] = useState(false)
+    const handleReady = useCallback(() => setReady(true), [])
+
     return (
-        <div style={{ width: '100%', height: '100%', minHeight: '250px' }}>
+        <div style={{
+            width: '100%',
+            height: '100%',
+            minHeight: '250px',
+            opacity: ready ? 1 : 0,
+            transition: 'opacity 0.8s ease',
+            willChange: 'opacity',
+        }}>
             <Canvas
                 camera={{ position: [0, 0, 6], fov: 45 }}
                 style={{ background: 'transparent' }}
@@ -131,16 +123,14 @@ export default function HeroScene() {
                 <spotLight position={[8, 8, 8]} angle={0.2} penumbra={1} intensity={0.8} />
                 <pointLight position={[-6, -4, -6]} intensity={0.4} color="#8b5cf6" />
 
-                <ErrorBoundary fallback={<FallbackBox />}>
-                    <Suspense fallback={<FallbackBox />}>
-                        <Shapes />
-                        <Particles count={150} />
-                        <Environment preset="city" />
-                    </Suspense>
-                </ErrorBoundary>
+                <Suspense fallback={null}>
+                    <SceneInner onReady={handleReady} />
+                </Suspense>
 
                 <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
             </Canvas>
         </div>
     )
-}
+})
+
+export default HeroScene

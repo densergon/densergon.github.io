@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const sections = ['home', 'about', 'skills', 'portfolio', 'experience', 'education', 'contact'] as const;
@@ -35,13 +35,18 @@ function Navbar({ isScrolled, activeSection, scrollToSection }: { isScrolled: bo
                                 onClick={() => scrollToSection(s)}
                             >
                                 {t(s)}
-                                {activeSection === s && (
-                                    <motion.div
-                                        layoutId="nav-underline"
-                                        className="nav-underline"
-                                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                    />
-                                )}
+                                <AnimatePresence mode="popLayout">
+                                    {activeSection === s && (
+                                        <motion.div
+                                            layoutId="nav-underline"
+                                            className="nav-underline"
+                                            initial={{ opacity: 0, scaleX: 0 }}
+                                            animate={{ opacity: 1, scaleX: 1 }}
+                                            exit={{ opacity: 0, scaleX: 0 }}
+                                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                        />
+                                    )}
+                                </AnimatePresence>
                             </a>
                         </li>
                     ))}
@@ -76,13 +81,18 @@ function Navbar({ isScrolled, activeSection, scrollToSection }: { isScrolled: bo
                                     onClick={() => handleLinkClick(s)}
                                 >
                                     {t(s)}
-                                    {activeSection === s && (
-                                        <motion.div
-                                            layoutId="sidebar-underline"
-                                            className="sidebar-underline"
-                                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                                        />
-                                    )}
+                                    <AnimatePresence mode="popLayout">
+                                        {activeSection === s && (
+                                            <motion.div
+                                                layoutId="sidebar-underline"
+                                                className="sidebar-underline"
+                                                initial={{ opacity: 0, scaleX: 0 }}
+                                                animate={{ opacity: 1, scaleX: 1 }}
+                                                exit={{ opacity: 0, scaleX: 0 }}
+                                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                            />
+                                        )}
+                                    </AnimatePresence>
                                 </a>
                             </li>
                         ))}

@@ -1,83 +1,84 @@
 {
-    "navbar": {
-        "home": "Inicio",
-        "about": "Sobre mí",
-        "skills": "Habilidades",
-        "portfolio": "Portafolio",
-        "experience": "Experiencia",
-        "education": "Educación",
-        "contact": "Contacto"
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "portfolio": "Portafolio",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Daniel Serna",
+    "titlea": "Ingeniero en Sistemas Computacionales",
+    "titleb": "Desarrollador Fullstack",
+    "description": "Creo aplicaciones fullstack de nivel profesional — desde backends con NestJS y esquemas PostgreSQL hasta plataformas web con React/Next.js y apps móviles con React Native, con un fuerte enfoque en integraciones IoT y seguridad.",
+    "view-work": "Ver mi trabajo",
+    "get-in-touch": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "content": "Ingeniero de Software con más de 4 años de experiencia fullstack desarrollando backends con NestJS/Node.js, plataformas web con React/Next.js y aplicaciones móviles con React Native e integraciones IoT. Responsabilidad integral desde el diseño de esquemas PostgreSQL y arquitectura de APIs REST hasta la entrega final, con despliegues en producción que sirven plataformas empresariales y clientes móviles. Amplia experiencia en sistemas criptográficos, aplicaciones en tiempo real y desarrollo multiplataforma con énfasis en rendimiento y seguridad.",
+    "experience": "Años de experiencia",
+    "projects": "Proyectos completados"
+  },
+  "skills": {
+    "title": "Habilidades y expertise",
+    "programming_languages": "Lenguajes de programación",
+    "frontend": "Desarrollo Frontend",
+    "backend": "Desarrollo Backend",
+    "databases": "Bases de datos",
+    "cloud": "Nube y DevOps",
+    "emerging_tech": "Tecnologías emergentes"
+  },
+  "portfolio": {
+    "title": "Proyectos destacados"
+  },
+  "experience": {
+    "title": "Experiencia profesional",
+    "developer": "Frontend Developer",
+    "web_developer": "Frontend Developer",
+    "penteon": {
+      "company": "Penteon Corporation - Rubidex",
+      "short": "Plataforma empresarial móvil y web con 500+ usuarios activos diarios en México.",
+      "developed1": "Diseñé y lancé una app móvil React Native y una plataforma web Next.js para 500+ usuarios activos diarios en México.",
+      "developed2": "Arquitecté una app IoT multiplataforma (React Native + Expo) con autenticación biométrica, notificaciones push APNs/FCM y monitoreo en tiempo real, reduciendo visitas técnicas de campo en un 30%.",
+      "developed3": "Lideré la ingeniería frontend de una plataforma web empresarial (Next.js 15, React 18) con dashboards, gestión de activos y facturación — usando React Query, Zustand y Framer Motion.",
+      "developed4": "Implementé estándares de calidad en 650+ commits: >96% cobertura TypeScript, ESLint/Prettier con Husky y revisiones de código estructuradas reduciendo bugs en producción un 25%."
     },
-    "hero": {
-        "greeting": "Hola, soy",
-        "name": "Daniel Serna",
-        "title": "Ingeniero de Software — Desarrollo Fullstack",
-        "description": "Creo aplicaciones fullstack de nivel profesional — desde backends con NestJS y esquemas PostgreSQL hasta plataformas web con React/Next.js y apps móviles con React Native, con un fuerte enfoque en integraciones IoT y seguridad.",
-        "view-work": "Ver mi trabajo",
-        "get-in-touch": "Contáctame"
-    },
-    "about": {
-        "title": "Sobre mí",
-        "content": "Ingeniero de Software con más de 4 años de experiencia fullstack desarrollando backends con NestJS/Node.js, plataformas web con React/Next.js y aplicaciones móviles con React Native e integraciones IoT. Responsabilidad integral desde el diseño de esquemas PostgreSQL y arquitectura de APIs REST hasta la entrega final, con despliegues en producción que sirven plataformas empresariales y clientes móviles. Amplia experiencia en sistemas criptográficos, aplicaciones en tiempo real y desarrollo multiplataforma con énfasis en rendimiento y seguridad.",
-        "experience": "Años de experiencia",
-        "projects": "Proyectos completados"
-    },
-    "skills": {
-        "title": "Habilidades y expertise",
-        "programming_languages": "Lenguajes de programación",
-        "frontend": "Desarrollo Frontend",
-        "backend": "Desarrollo Backend",
-        "databases": "Bases de datos",
-        "cloud": "Nube y DevOps",
-        "emerging_tech": "Tecnologías emergentes"
-    },
-    "portfolio": {
-        "title": "Proyectos destacados"
-    },
-    "experience": {
-        "title": "Experiencia profesional",
-        "developer": "Frontend Developer",
-        "web_developer": "Frontend Developer",
-        "penteon": {
-            "company": "Penteon Corporation - Rubidex",
-            "short": "Plataforma empresarial móvil y web con 500+ usuarios activos diarios en México.",
-            "developed1": "Diseñé y lancé una app móvil React Native y una plataforma web Next.js para 500+ usuarios activos diarios en México.",
-            "developed2": "Arquitecté una app IoT multiplataforma (React Native + Expo) con autenticación biométrica, notificaciones push APNs/FCM y monitoreo en tiempo real, reduciendo visitas técnicas de campo en un 30%.",
-            "developed3": "Lideré la ingeniería frontend de una plataforma web empresarial (Next.js 15, React 18) con dashboards, gestión de activos y facturación — usando React Query, Zustand y Framer Motion.",
-            "developed4": "Implementé estándares de calidad en 650+ commits: >96% cobertura TypeScript, ESLint/Prettier con Husky y revisiones de código estructuradas reduciendo bugs en producción un 25%."
-        },
-        "soltec": {
-            "company": "SOLTEC",
-            "short": "Desarrollo web con Vue 3 en 6+ módulos de producto.",
-            "developed1": "Construí módulos SPA con Vue 3 y Pinia en 6+ módulos de producto, eliminando solicitudes duplicadas y mejorando la sincronización de componentes en un 40%.",
-            "developed2": "Implementé tablas AG Grid para vistas operativas de alto volumen integrando Naive UI con tematización personalizada.",
-            "developed3": "Codiseñé contratos de API REST y flujos de autenticación (JWT + RBAC) con el equipo backend, reduciendo retrabajo de integración en un 35%.",
-            "developed4": "Optimicé el tamaño del bundle en un 28% mediante code-splitting y lazy loading, mejorando los tiempos de carga iniciales."
-        }
-    },
-    "education": {
-        "title": "Educación",
-        "university": "Instituto Politécnico Nacional",
-        "school": "ESCOM — Escuela Superior de Cómputo",
-        "degree": "Ingeniería en Sistemas Computacionales",
-        "year": "2018 — 2024",
-        "cecyt": "CECyT #9 — Centro de Estudios Científicos y Tecnológicos",
-        "cecyt_degree": "Técnico en Programación",
-        "cecyt_year": "2015 — 2018",
-        "capstone": "Desarrollé un sistema fullstack de verificación de asistencia (React Native móvil + portal web React + backend Node.js) adoptado para seguimiento académico y de clubes deportivos, manejando 200+ usuarios concurrentes."
-    },
-    "contact": {
-        "title": "Ponte en contacto",
-        "content": "¿Tienes un proyecto en mente o solo quieres charlar? No dudes en contactarme — siempre estoy abierto a nuevas oportunidades.",
-        "name": "Tu nombre",
-        "email": "Correo electrónico",
-        "message": "Tu mensaje",
-        "send-message": "Enviar mensaje",
-        "success": "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
-        "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
-        "phone": "Teléfono",
-        "location": "Ubicación",
-        "location-description": "Ciudad de México, México",
-        "email-address": "dan.ser-gon@outlook.com"
+    "soltec": {
+      "company": "SOLTEC",
+      "short": "Desarrollo web con Vue 3 en 6+ módulos de producto.",
+      "developed1": "Construí módulos SPA con Vue 3 y Pinia en 6+ módulos de producto, eliminando solicitudes duplicadas y mejorando la sincronización de componentes en un 40%.",
+      "developed2": "Implementé tablas AG Grid para vistas operativas de alto volumen integrando Naive UI con tematización personalizada.",
+      "developed3": "Codiseñé contratos de API REST y flujos de autenticación (JWT + RBAC) con el equipo backend, reduciendo retrabajo de integración en un 35%.",
+      "developed4": "Optimicé el tamaño del bundle en un 28% mediante code-splitting y lazy loading, mejorando los tiempos de carga iniciales."
     }
+  },
+  "education": {
+    "title": "Educación",
+    "university": "Instituto Politécnico Nacional",
+    "school": "ESCOM — Escuela Superior de Cómputo",
+    "degree": "Ingeniería en Sistemas Computacionales",
+    "year": "2018 — 2024",
+    "cecyt": "CECyT #9 — Centro de Estudios Científicos y Tecnológicos",
+    "cecyt_degree": "Técnico en Programación",
+    "cecyt_year": "2015 — 2018",
+    "capstone": "Desarrollé un sistema fullstack de verificación de asistencia (React Native móvil + portal web React + backend Node.js) adoptado para seguimiento académico y de clubes deportivos, manejando 200+ usuarios concurrentes."
+  },
+  "contact": {
+    "title": "Ponte en contacto",
+    "content": "¿Tienes un proyecto en mente o solo quieres charlar? No dudes en contactarme — siempre estoy abierto a nuevas oportunidades.",
+    "name": "Tu nombre",
+    "email": "Correo electrónico",
+    "message": "Tu mensaje",
+    "send-message": "Enviar mensaje",
+    "success": "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
+    "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "location-description": "Ciudad de México, México",
+    "email-address": "dan.ser-gon@outlook.com"
+  }
 }
